@@ -1,9 +1,8 @@
-package org.example;
+package org.example.backjoon;
 
 import java.io.IOException;
 
 import java.io.*;
-import java.util.*;
 
 public class Main011 {
 
