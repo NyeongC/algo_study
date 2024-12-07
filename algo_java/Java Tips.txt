@@ -1,0 +1,41 @@
+자바 팁
+
+### 배열 -> 리스트 변환 
+
+// 배열 생성
+String[] array = {"apple", "banana", "cherry"};
+
+// 배열을 리스트로 변환 (고정 크기 리스트)
+List<String> list1 = Arrays.asList(array);
+System.out.println(list1);  // 출력: [apple, banana, cherry]
+
+// ArrayList로 변환하여 수정 가능한 리스트 만들기
+List<String> list2 = new ArrayList<>(Arrays.asList(array));
+list2.add("date");
+System.out.println(list2);  // 출력: [apple, banana, cherry, date]
+
+
+### 캐릭터, 스트링
+
+s.charAt(i) - '0' -> 정수 나옴
+
+char c = s.charAt(i);
+
+Character.isDigit(c) -> 숫자인지 판단
+
+String.join("",arr); -> arr에 있는거 다 더해서 string 반환 근데 내부적으론 StringBuilder 써서 속도도 빠름
+
+### 정렬
+// 배열 정렬 
+Arrays.sort(arr);  // 기본적으로 오름차순 정렬
+Arrays.sort(arr, Comparator.reverseOrder());  // 내림차순 정렬
+
+// CollectionSort
+Collections.sort(list);  // 오름차순 정렬
+Collections.sort(list, Collections.reverseOrder());
+// 단순히 역순으로 출력
+Collections.reverse(list)
+
+// 리스트
+list.sort(null);  // 기본적으로 오름차순 정렬
+list.sort(Comparator.reverseOrder());  // 내림차순 정렬
