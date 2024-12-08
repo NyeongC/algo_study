@@ -14,6 +14,9 @@ List<String> list2 = new ArrayList<>(Arrays.asList(array));
 list2.add("date");
 System.out.println(list2);  // 출력: [apple, banana, cherry, date]
 
+// list를 배열로 반환
+list.stream().mapToInt(Integer::intValue).toArray();
+
 
 ### 캐릭터, 스트링
 
