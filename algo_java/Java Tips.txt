@@ -42,3 +42,13 @@ Collections.reverse(list)
 // 리스트
 list.sort(null);  // 기본적으로 오름차순 정렬
 list.sort(Comparator.reverseOrder());  // 내림차순 정렬
+
+
+### 우선순위 큐
+1. 최소 힙 PriorityQueue<Integer> minHeap = new PriorityQueue<>();
+
+2. 최대 힙 PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
+
+add(E e), size(), isEmpty()	
+peek()	최우선순위 요소를 반환(제거하지 않음).
+poll()	최우선순위 요소를 반환하고 제거.
