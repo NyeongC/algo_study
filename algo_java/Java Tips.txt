@@ -52,3 +52,19 @@ list.sort(Comparator.reverseOrder());  // 내림차순 정렬
 add(E e), size(), isEmpty()	
 peek()	최우선순위 요소를 반환(제거하지 않음).
 poll()	최우선순위 요소를 반환하고 제거.
+
+
+### 큐
+Queue<Integer> queue = new LinkedList<>();
+// FIFO (First In First Out) 방식으로 동작
+// 주요 메서드: add(), poll(), peek(), isEmpty()
+
+### 덱
+Deque<Integer> deque = new ArrayDeque<>();
+// 양방향으로 삽입/삭제 가능
+// 주요 메서드: addFirst(), addLast(), removeFirst(), removeLast(), peekFirst(), peekLast()
+
+### 스택
+Stack<Integer> stack = new Stack<>();
+// LIFO (Last In First Out) 방식으로 동작
+// 주요 메서드: push(), pop(), peek(), isEmpty()
