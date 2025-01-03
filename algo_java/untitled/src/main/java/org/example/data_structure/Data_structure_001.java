@@ -2,7 +2,7 @@ package org.example.data_structure;
 
 import java.util.*;
 
-public class data_structure_001 {
+public class Data_structure_001 {
 
     /*
     * ArrayList 사용법

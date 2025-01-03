@@ -1,6 +1,6 @@
 package org.example.string;
 
-public class string_001 {
+public class String_001 {
 /*
 * 크기가 작은 부분문자열
 * */
