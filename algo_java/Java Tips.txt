@@ -17,10 +17,17 @@ System.out.println(list2);  // 출력: [apple, banana, cherry, date]
 // list를 배열로 반환
 list.stream().mapToInt(Integer::intValue).toArray();
 
-// 배열 중복 제거 및 int형 반환
-Integer [] result = Arrays.stream(arr).boxed().distinct().toArray(Integer::new);
 
-Arrays.stream(result).mapToInt(Integer::intValue).toArray();
+int [] arr = {5,2,1,2,3,4,4};
+
+// 중복제거 및 Integer 변환
+Integer [] result = Arrays.stream(arr).boxed().distinct().toArray(Integer[]::new);
+// 역순 정령
+Arrays.sort(result,Comparator.reverseOrder());
+// 다시 인트
+int [] arr2 = Arrays.stream(result).mapToInt(Integer::intValue).toArray();
+// 출력
+System.out.println(Arrays.toString(arr2));
 
 
 ### 캐릭터, 스트링
@@ -36,7 +43,7 @@ String.join("",arr); -> arr에 있는거 다 더해서 string 반환 근데 내�
 ### 정렬
 // 배열 정렬 
 Arrays.sort(arr);  // 기본적으로 오름차순 정렬
-Arrays.sort(arr, Comparator.reverseOrder());  // 내림차순 정렬
+Arrays.sort(arr, Comparator.reverseOrder());  // 내림차순 정렬 <- 객체배열만 가능
 
 // CollectionSort
 Collections.sort(list);  // 오름차순 정렬
@@ -73,3 +80,26 @@ Deque<Integer> deque = new ArrayDeque<>();
 Stack<Integer> stack = new Stack<>();
 // LIFO (Last In First Out) 방식으로 동작
 // 주요 메서드: push(), pop(), peek(), isEmpty()
+
+
+### 트리 셋
+int[] arr = {5, 2, 1, 2, 3, 4, 4};
+
+// TreeSet을 내림차순으로 정렬되도록 생성
+TreeSet<Integer> ts = new TreeSet<>(Collections.reverseOrder());
+
+// 배열의 요소를 TreeSet에 추가 (중복 제거 및 정렬)
+for (int i : arr) {
+    ts.add(i);
+}
+
+// TreeSet의 크기만큼 새로운 배열 생성
+int[] arr2 = new int[ts.size()];
+
+// TreeSet에서 요소를 꺼내어 새로운 배열에 저장
+for (int i = 0; i < arr2.length; i++) {
+    arr2[i] = ts.pollFirst();
+}
+
+// 결과 출력
+System.out.println(Arrays.toString(arr2));
