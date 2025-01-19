@@ -30,8 +30,13 @@ public class book_003 {
             }
         }
 
-        return hm.entrySet().stream().sorted((o1, o2) -> Double.compare(o2.getValue(), o1.getValue()))
-                .mapToInt(HashMap.Entry::getKey).toArray();
+        return hm.entrySet().stream().sorted((o1, o2) -> {
+            int compareValue = Double.compare(o2.getValue(),o1.getValue());
+            if(compareValue == 0){
+                return Integer.compare(o1.getKey(),o2.getKey());
+            }
+            return compareValue;
+        }).mapToInt(HashMap.Entry::getKey).toArray();
     }
 
 }
