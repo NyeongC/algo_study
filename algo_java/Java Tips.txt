@@ -103,3 +103,46 @@ for (int i = 0; i < arr2.length; i++) {
 
 // 결과 출력
 System.out.println(Arrays.toString(arr2));
+
+
+### Sream
+1.마지막에 toArray()하는 기준 
+#1 기본 타입 배열(int[], double[] 등)은 toArray()를 그냥 사용하면 됨
+int[] intArr = {1, 4, 5, 2, 3}; / intArr = Arrays.stream(intArr).sorted().toArray();
+
+#2 객체 배열(Integer[], String[], int[][] 등)은 배열 생성기 형태의 toArray()를 사용해야 합니다. 예를 들어, Integer[]::new, String[]::new, int[][]::new 등을 사용
+ex) int[][] int2DArr = {{1, 2},{3, 4},{5, 6},{7, 8} }; / stringArr = Arrays.stream(stringArr).sorted().toArray(String[]::new);
+
+2.자료구조별 사용법
+1) 맵
+// 키 스트림
+map.keySet().stream().forEach(System.out::println);
+
+// 값 스트림
+map.values().stream().forEach(System.out::println);
+
+// 엔트리 스트림
+map.entrySet().stream().forEach(entry -> System.out.println(entry.getKey() + ": " + entry.getValue()));
+
+2) 셋, 리스트, 큐, 스택
+set.stream().forEach(System.out::println);		
+list.stream().forEach(System.out::println);
+stack.stream().forEach(System.out::println);
+queue.stream().forEach(System.out::println);
+3) 어레이
+Arrays.stream(arr).forEach(System.out::println);
+
+3.int[]를 객체 타입 배열 Integer[]로 변환
+Arrays.stream(arr).mapToObj(Integer::valueOf).toArray(Integer[]::new)     
+Arrays.stream(arr).boxed().toArray(Integer[]::new)
+
+4. int -> 변환 mapToInt / mapToDouble 등등 있음
+Integer일 경우 : mapToInt(Integer::intValue)
+String일 경우 :  mapToInt(Integer::parseInt)
+
+5. 최종연산
+count(), min(), max().getAsInt() / getAsDouble();
+sum(), average()
+forEach()
+collect(Collectors.toList()), toArray(int[][]::new)
+anyMatch(), allMatch(), noneMatch()
