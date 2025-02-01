@@ -157,3 +157,9 @@ anyMatch(), allMatch(), noneMatch()
 list.stream()
 	.map(String::valueOf) // map(String::valueOf) → Integer를 String으로 변환
 	.toArray(String[]::new); // toArray(String[]::new) → 최종적으로 String[] 배열로 변환
+
+7. 객체 스트림(Stream<T>)이면 map() 사용 / 기본 타입 스트림(IntStream, LongStream, DoubleStream)이면 mapToObj() 사용
+✅ 객체 컬렉션 (List<T>, Set<T>, Queue<T> 등) → map()
+✅ 기본 타입 배열 (int[], long[], double[])
+객체로 변환할 때 → mapToObj()
+기본 타입으로 유지할 때 → mapToInt(), mapToLong(), mapToDouble()
