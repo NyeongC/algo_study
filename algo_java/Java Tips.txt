@@ -81,6 +81,12 @@ Stack<Integer> stack = new Stack<>();
 // LIFO (Last In First Out) 방식으로 동작
 // 주요 메서드: push(), pop(), peek(), isEmpty()
 
+### 해쉬 맵
+// get을 했을때 null이면 defult값 설정 가능
+hm.getOrDafault(string,0)
+// 완전 동일한 해시맵이 있는지 판단
+hm.equals(hm2)
+
 
 ### 트리 셋
 int[] arr = {5, 2, 1, 2, 3, 4, 4};
