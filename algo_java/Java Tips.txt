@@ -152,3 +152,8 @@ sum(), average()
 forEach()
 collect(Collectors.toList()), toArray(int[][]::new)
 anyMatch(), allMatch(), noneMatch()
+
+6. Integer 리스트를 String 배열로 변환
+list.stream()
+	.map(String::valueOf) // map(String::valueOf) → Integer를 String으로 변환
+	.toArray(String[]::new); // toArray(String[]::new) → 최종적으로 String[] 배열로 변환
