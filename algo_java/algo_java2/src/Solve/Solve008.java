@@ -3,29 +3,32 @@ package Solve;
 import java.util.Stack;
 
 /*
-프로그래머스 뒤에 있는 큰 수 찾기
-스택
+프로그래머스 숫자의 표현
+브루트포스
 */
 public class Solve008 {
 
-    public int[] solution(int[] numbers) {
-        int len = numbers.length;
-        int[] answer = new int[len];
-        Stack<Integer> st = new Stack<>();
+    class Solution {
+        public int solution(int n) {
+            int answer = 1;
 
-        st.add(0);
-        for (int i = 0; i < len; i++) {
-            while (!st.isEmpty() && numbers[st.peek()] < numbers[i]) {
-                answer[st.pop()] = numbers[i];
+            for (int i = 1; i < n - 1; i++) {
+                int sum = i;
+                int count = i + 1;
+                while (true) {
+                    sum += count++;
+                    if (sum == n) {
+                        answer++;
+                        break;
+                    }
+
+                    if (sum > n)
+                        break;
+                }
             }
-            st.add(i);
-        }
 
-        while(!st.isEmpty()) {
-            answer[st.pop()] = -1;
+            return answer;
         }
-
-        return answer;
     }
 
 }
